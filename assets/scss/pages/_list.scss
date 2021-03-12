@@ -1,0 +1,36 @@
+.list {
+
+  &-banner {
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(sm) {
+      flex-direction: row;
+    }
+
+    > div {
+      flex: 1;
+      flex-basis: 50%;
+    }
+
+    &-image {
+
+      img {
+        object-fit: cover;
+        height: 100%;
+      }
+
+      + .list-banner-content {
+        padding-left: ($gutter-width * 3);
+        padding-right: ($gutter-width * 3);
+      }
+    }
+
+    &-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}

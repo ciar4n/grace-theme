@@ -1,0 +1,21 @@
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding-top: 4px;
+  padding-inline-start: 5px;
+
+  a {
+    padding: 6px;
+  }
+
+  img {
+    display: inline-block;
+    font-size: inherit;
+    width: 18px;
+    overflow: visible;
+    vertical-align: -0.125em;
+    color: $white;
+  }
+}

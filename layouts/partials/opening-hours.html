@@ -1,0 +1,14 @@
+{{ if .Site.Data.opening_hours }}
+  <div class="opening-hours">
+    <table>
+      <tbody>
+      {{ range .Site.Data.opening_hours }}
+      <tr>
+        <td>{{ .day }}</td>
+        <td>{{ .time }}</td>
+      </tr>
+      {{ end }}
+      </tbody>
+    </table>
+  </div>
+{{ end }}

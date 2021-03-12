@@ -1,0 +1,78 @@
+{{ define "title" }}{{ .Site.Title }}{{ end}}
+{{ define "body_classes" }}page-home{{ end }}
+
+{{ define "meta_tags" }}
+<meta name="description" content="{{ .Site.Params.homepage_meta_tags.meta_description }}" />
+<meta property="og:title" content="{{ .Site.Params.homepage_meta_tags.meta_og_title }}" />
+<meta property="og:type" content="{{ .Site.Params.homepage_meta_tags.meta_og_type }}" />
+<meta property="og:url" content="{{ .Site.Params.homepage_meta_tags.meta_og_url }}" />
+<meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image }}" />
+<meta property="og:description" content="{{ .Site.Params.homepage_meta_tags.meta_og_description }}" />
+<meta name="twitter:card" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_card }}" />
+<meta name="twitter:site" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_site }}" />
+<meta name="twitter:creator" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_creator }}" />
+{{ end }}
+
+{{ define "main" }}
+
+  {{ $blog := where (where .Site.RegularPages "Type" "blog") ".Params.featured" true }}
+  {{if gt (len $blog) 0}}
+    <section class="home-blog-featured block bg-offwhite">
+      <div class="wrapper">
+        <div class="home-blog-items">
+          {{ range first 1 (sort $blog ".Params.date") }}
+            {{ .Render "summary" }}
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{end}}
+
+  {{ $paginator := .Paginate (where (where .Site.RegularPages "Type" "blog") ".Params.featured" "!=" true) }}
+  {{if gt (len $blog) 0}}
+      <section class="home-blog block">
+        <div class="wrapper">
+          <div class="home-blog-items col-3 col-md-2 col-sm-1">
+            {{ range $paginator.Pages }}
+              {{ .Render "summary" }}
+            {{ end }}
+          </div>
+          <div class="home-blog-footer home-block-footer">
+            {{ template "_internal/pagination.html" . }}
+          </div>
+        </div>
+      </section>
+  {{end}}
+
+  {{ if .Site.Data.call_to_action }}
+  {{ range first 1 .Site.Data.call_to_action }}
+    <section class="home-call-to-action block bg-offwhite jarallax" style="background-image: url('{{ .background_image | relURL | safeCSS }}');" data-jarallax data-speed="0.7">
+      <div class="wrapper">
+        <div class="call-to-action text-center">
+          <div class="call-to-action-text">
+            <h2>{{ .title }}</h2>
+            <p>{{ .subtitle }}</p>
+          </div>
+          <div class="call-to-action-button">
+            {{ range .buttons }}
+              <a href="{{ .button_link }}"><button>{{ .button_text }}</button></a>
+            {{end}}
+          </div>
+        </div>
+      </div>
+    </section>
+    {{end}}
+  {{end}}
+  
+{{ end }}
+
+{{ define "footer_js" }}
+  {{ $jarallax := resources.Get "js/libs/jarallax.js" }}
+  {{ $home := resources.Get "js/pages/home.js" }}
+  {{ $homeJS := slice $jarallax $home | resources.Concat "js/home.js" }}
+  {{ if .Site.IsServer }}
+    <script type="text/javascript" src="{{ $homeJS.RelPermalink }}"></script>
+    {{ else }}
+    <script type="text/javascript" src="{{ ($homeJS | minify | fingerprint).RelPermalink }}"></script>
+  {{ end }}
+{{ end }}

@@ -1,0 +1,11 @@
+<footer class="footer">
+  <div class="wrapper">
+    <div>
+      <h4 class="footer-title">{{.Site.Title}}</h4>
+      <span class="copyright">
+        {{ .Site.Params.footer.copyright_text | safeHTML }}
+      </span>
+    </div>
+    <div>{{ partial "header-menu.html" . }}</div>
+  </div>
+</footer>

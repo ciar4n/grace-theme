@@ -1,0 +1,9 @@
+{{ if .Site.Data.social }}
+  <ul class="social-icons">
+    {{ range .Site.Data.social }}
+      <li>
+        <a href="{{ .link }}" target="blank"><img src="{{ .image | relURL }}" title="{{ .name }}" alt="{{ .name }}" /></a>
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}

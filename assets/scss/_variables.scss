@@ -1,0 +1,26 @@
+// CSS Variables
+:root {
+  --gutter-width: #{$gutter-width};
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+  --black: #{$black};
+  --white: #{$white};
+  --white-offset: #{$white-offset};
+  --border: rgba(0, 0, 0, 0.2);
+  --border-radius: 0;
+
+  --typo-size-1: 3rem;
+  --typo-size-2: 2.4rem;
+  --typo-size-3: 2rem;
+  --typo-size-4: 1.6rem;
+  --typo-size-5: 1.2rem;
+  --typo-size-6: 1rem;
+}
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1300px,
+);

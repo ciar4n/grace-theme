@@ -1,0 +1,13 @@
+<header id="header" class='header'>
+  <div class="wrapper">
+    <div class="header-logo mr-auto">
+      <a href="{{ .Site.BaseURL }}"><img height={{ .Site.Params.logo.desktop_height }} alt="{{ .Site.Params.logo.alt }}" src="{{ .Site.Params.logo.desktop | relURL }}" /></a>
+    </div>
+    <div class="header-logo-mobile">
+      <a href="{{ .Site.BaseURL }}"><img alt="{{ .Site.Params.logo.alt }}" src="{{ .Site.Params.logo.mobile | relURL }}" /></a>
+    </div>
+    {{ partial "header-menu.html" . }}
+    {{ partial "social-icons.html" . }}
+    {{ partial "hamburger.html" . }}
+  </div>
+</header>

@@ -1,0 +1,42 @@
+baseURL = "www.example.com"
+languageCode = "en-us"
+title = "Grace Hugo Theme"
+paginate = 6
+
+[params]
+  google_analytics_id = ""
+
+  [params.logo]
+    desktop = "images/logo/logo.svg"
+    desktop_height = "26px"
+    mobile = "images/logo/logo-mobile.svg"
+    alt = "Grace - A Hugo Theme"
+
+  [params.homepage_meta_tags]
+    meta_description = "A perfect Hugo theme solution for modern Gyms & fitness websites. A fully responsive solution, beautifully designed and packed with great features."
+    meta_og_title = "Endurance Hugo Theme"
+    meta_og_type = "website"
+    meta_og_url = "#"
+    meta_og_image = "#"
+    meta_og_description = "A perfect Hugo theme solution for modern Gyms & fitness websites. A fully responsive solution, beautifully designed and packed with great features."
+    meta_twitter_card = "summary"
+    meta_twitter_site = "@ciar4n"
+    meta_twitter_creator = "@ciar4n"
+
+  [params.footer]
+    copyright_text = 'Copyright © <a class="staticmonster" href="https://www.staticmonster.com">StaticMonster</a> 2020'
+
+  [params.contact]
+    enable = true
+    form_action = "#" # contact form works with : https://formspree.io
+
+[menu]
+  # Main Menu
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+[markup.goldmark.renderer]
+  # Allows raw HTML in your markdown 
+  unsafe= true

@@ -1,0 +1,35 @@
+.page-home {
+  .header {
+    @include media-breakpoint-up(md) {
+    }
+  }
+}
+
+.home-blog {
+  &-featured {
+    .summary {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .summary {
+      &-image,
+      &-content {
+        @include media-breakpoint-up(md) {
+          flex: 1 0 50%;
+          max-width: 50%;
+          margin-bottom: 0;
+        }
+      }
+
+      &-content {
+        @include media-breakpoint-up(md) {
+          padding: $gutter-width ($gutter-width * 2);
+        }
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

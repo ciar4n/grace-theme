@@ -1,0 +1,24 @@
+.footer {
+  padding: 25px var(--gutter-width);
+  margin-top: auto;
+  background-color: $black;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  * {
+    color: $white;
+  }
+
+  &-title {
+    margin: 0;
+  }
+
+  a {
+    color: var(--off-white);
+    font-weight: bold;
+  }
+}

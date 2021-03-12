@@ -1,0 +1,31 @@
+{{ define "body_classes" }}page-default-single{{ end }}
+
+
+{{ define "header_css" }}
+  {{ if .Params.banner_image_text_color }}
+  <style>
+    :root {
+      --banner-text-color: {{ .Params.banner_image_text_color }};
+    }
+  </style>
+  {{ end }}
+{{ end }}
+
+{{ define "main" }}
+<section class="banner bg-black">
+  {{ if .Params.banner_image }}
+    <div class="banner-image">
+      <img alt={{ .Title }} src="{{ .Params.banner_image | relURL }}" />
+    </div>
+  {{ end }}
+</section>
+
+<section class="block">
+  <div class="wrapper">
+    <main class="content">
+      <h1 class="title">{{.Title}}</h1>
+      {{.Content}}
+    </main>
+  </div>
+</section>
+{{ end }}

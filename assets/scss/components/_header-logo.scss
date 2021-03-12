@@ -1,0 +1,38 @@
+.header-logo {
+  display: none;
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+  }
+
+  img {
+    max-width: unset;
+  }
+
+  a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.header-logo-mobile {
+  display: block;
+  width: 100%;
+  padding: 10px 0 10px 0;
+
+  @include media-breakpoint-up(sm) {
+    display: none;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}

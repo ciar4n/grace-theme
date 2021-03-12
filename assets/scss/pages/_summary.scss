@@ -1,0 +1,32 @@
+.summary {
+  margin-bottom: 2rem;
+
+  &-image {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    margin-bottom: 1rem;
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &-title {
+    margin: 0;
+  }
+
+  &-date {
+    font-size: 0.85em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  &-readmore {
+    font-size: 0.85em;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}

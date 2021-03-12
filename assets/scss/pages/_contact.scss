@@ -1,0 +1,70 @@
+.page-contact {
+  .banner-text {
+    > .wrapper {
+      display: flex;
+      flex-direction: column;
+
+      .contact-details {
+        margin: 1rem 0 0 0;
+
+        a {
+          color: white;
+        }
+      }
+
+      @include media-breakpoint-up(sm) {
+        flex-direction: row;
+        align-items: center;
+
+        .contact-details {
+          margin: 0 0 0 auto;
+        }
+      }
+    }
+  }
+}
+
+.contact {
+  &-main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    .opening-hours {
+      padding: 0;
+
+      table {
+        margin: 0;
+      }
+
+      th,
+      td {
+        padding: 0.65rem 1.25rem;
+      }
+    }
+  }
+
+  &-content {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  &-details {
+    min-width: 300px;
+    padding: 1rem 1.5rem;
+
+    > div {
+      padding: 5px 0;
+    }
+
+    svg {
+      min-width: 40px;
+    }
+  }
+
+  &-form {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+}

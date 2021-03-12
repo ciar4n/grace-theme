@@ -1,0 +1,26 @@
+[view_all]
+other = "View All"
+
+[read_more]
+other = "Read More"
+
+[back_to_homepage]
+other = "Back to homepage"
+
+[opening_hours]
+other = "Opening Hours"
+
+
+# Contact
+
+[your_name]
+other = "Your Name"
+
+[your_email]
+other = "Your Email"
+
+[your_message]
+other = "Your Message"
+
+[send_us_a_message]
+other = "Send us a Message"

@@ -1,0 +1,22 @@
+.header {
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px var(--gutter-width);
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &.header-absolute {
+    @include media-breakpoint-up(md) {
+      position: absolute;
+      z-index: 10;
+      width: 100%;
+    }
+  }
+}

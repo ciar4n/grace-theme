@@ -1,0 +1,12 @@
+{{ define "body_classes" }}page-not-found{{ end }}
+
+{{ define "main" }}
+<div class="block">
+  <div class="wrapper text-center">
+    <h1 class="color-primary">404</h1>
+    <h2>{{ .Title }}</h2>
+    <h5>{{ .Content }}</h5>
+    <a href="/">{{ i18n "back_to_homepage" }}</a>
+  </div>
+</div>
+{{ end }}

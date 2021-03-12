@@ -1,0 +1,56 @@
+{{ define "body_classes" }}page-contact{{ end }}
+
+{{ define "main" }}
+<section class="banner bg-black">
+  {{ if .Params.banner_image }}
+    <div class="banner-image">
+      <img alt={{ .Title }} src="{{ .Params.banner_image | relURL }}" />
+    </div>
+  {{ end }}
+</section>
+
+<section class="block">
+  <div class="wrapper content-wrapper">
+    <main class="contact-main">
+      <div class="contact-content">
+        <h1 class="title">{{.Title}}</h1>
+        {{ .Content }}
+      </div> 
+    </main>
+    {{ if .Site.Data.opening_hours }}
+    <aside class="sidebar">
+      <div class="sidebar-item">
+        <div class="sidebar-header">
+          {{ i18n "opening_hours" }}
+        </div>
+        <div class="sidebar-content">
+          {{ partial "opening-hours.html" . }}
+        </div>
+      </div>
+    </aside>
+    {{ end }}
+  </div>
+</section>
+
+<section class="block bg-offwhite">
+  <div class="wrapper">
+    <form action="{{site.Params.contact.form_action}}" method="POST" class="contact-form">
+      <div class="col-2">
+        <div>
+          <input type="text" id="name" name="name" placeholder="{{ i18n "your_name" }}">
+        </div>
+        <div>
+          <input type="email" id="email" name="email" placeholder="{{ i18n "your_email" }}">
+        </div>
+      </div>
+      <div>
+        <textarea name="message" id="message" placeholder="{{ i18n "your_message" }}"></textarea>
+      </div>
+      <div>
+        <button class="btn btn-primary w-100">{{ i18n "send_us_a_message" }}</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+{{ end }}

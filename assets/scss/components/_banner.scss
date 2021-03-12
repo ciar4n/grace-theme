@@ -1,0 +1,44 @@
+.banner {
+  display: flex;
+  position: relative;
+  min-height: 250px;
+  box-shadow: inset 0 -8px $primary;
+
+  .wrapper {
+    padding-bottom: 20px;
+  }
+
+  &-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-text {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .title {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.intro-image-hide-mobile {
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    display: block;
+  }
+}

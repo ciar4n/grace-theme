@@ -1,0 +1,14 @@
+.page-default-single {
+  @include media-breakpoint-up(md) {
+    .banner + .block {
+      position: relative;
+      z-index: 10;
+
+      main.content {
+        background: $white;
+        padding: 3rem clamp(5px, 4vw, 4rem);
+        margin-top: -100px;
+      }
+    }
+  }
+}

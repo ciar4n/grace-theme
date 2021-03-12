@@ -1,0 +1,36 @@
+body {
+  font-family: $font-family-base;
+  color: $black;
+}
+
+a {
+  color: $primary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-heading;
+  font-weight: 600;
+  line-height: 1.3em;
+  --text-c: #{$black};
+}
+
+input,
+button,
+textarea,
+select,
+details > summary,
+.tag {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  box-shadow: none;
+}
+
+button {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

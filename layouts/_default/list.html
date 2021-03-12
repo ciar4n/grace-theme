@@ -1,0 +1,44 @@
+{{ define "body_classes" }}page-default-list{{ end }} 
+
+{{ define "header_css" }}
+  {{ if .Params.banner_image_text_color }}
+  <style>
+    :root {
+      --banner-text-color: {{ .Params.banner_image_text_color }};
+    }
+  </style>
+  {{ end }}
+{{ end }}
+
+{{ define "main" }}
+<section class="banner bg-black">
+  {{ if .Params.banner_image }}
+    <div class="banner-image">
+      <img alt={{ .Title }} src="{{ .Params.banner_image | relURL }}" />
+    </div>
+  {{ end }}
+  <div class="banner-text">
+    <div class="wrapper">
+      <h1 class="title">{{.Title}}</h1>
+      <div id="breadcrumbs">
+        <a href="/">Home</a> / {{.Title}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block list-content bg-offwhite">
+  <div class="wrapper">
+    {{ .Content }}
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrapper">
+    <main class="default-list-items col-3 col-md-2 col-sm-1">
+      {{ range .Paginator.Pages }} {{ .Render "summary" }} {{ end }}
+    </main>
+  </div>
+  {{ template "_internal/pagination.html" . }}
+</section>
+{{ end }}
